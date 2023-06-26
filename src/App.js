@@ -13,9 +13,20 @@ const handleChange = (event) =>{
   setNewTask(event.target.value);
 }
 const addTask= () =>{
-const newTodoList = [...todoList, newTask];
-setTodoLlist(newTodoList);
-console.log(newTodoList)
+
+const task ={
+  id: todoList.length === 0 ? 1 : todoList[todoList.length -1].id+1,
+  taskName: newTask
+}
+
+setTodoLlist([...todoList, task]);
+
+}
+
+const deleteTask = (taskId) =>{
+console.log(taskId)
+  setTodoLlist(todoList.filter((task) =>   taskId !== task.id));
+
 }
 
   return (
@@ -28,8 +39,12 @@ console.log(newTodoList)
 
 <div className='list'>
 
-{todoList.map((task)=>{
-return <h1>{task}</h1>
+{todoList.slice().reverse().map((task)=>{
+return (
+<div>
+  <h1>{task.taskName}</h1>
+ <button onClick={()=>{deleteTask(task.id)}}>X</button>
+  </div>)
 })}
 
 </div>

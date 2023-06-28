@@ -1,6 +1,7 @@
 
 import './App.css';
 import { useState } from 'react';
+import { Task } from "./task"
 
 
 function App() {
@@ -33,7 +34,7 @@ console.log(taskId)
     <div className="App">
 <div className='addTask'>
 
- <input onChange={handleChange} type='text'/> 
+ <input className='top-section' onChange={handleChange} type='text'/> 
  <button onClick={addTask}>Add Task</button>
  </div>
 
@@ -43,11 +44,9 @@ console.log(taskId)
 <div className='list'>
 
 {todoList.slice().reverse().map((task)=>{
-return (
-<div>
-  <h1>{task.taskName}</h1>
- <button onClick={()=>{deleteTask(task.id)}}>X</button>
-  </div>)
+//return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>
+return <Task taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>
+
 })}
 
 </div>

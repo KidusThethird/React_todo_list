@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.addTask{
+  background-color: #61dafb;
+  height: 30vh;
+ 
+}
+.top-section{
+  justify-content: center;
+ margin-top: 10%;
+}
+.each_list{
+  display:flex;
+  justify-content: center;
+}
+.each_list h1{
+
+}
+.each_list button{
+  margin-left: 10px;
+  height: 30px;
+ 
+align-items: center;
+margin-top: 25px;
+
+}
